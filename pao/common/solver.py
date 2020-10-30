@@ -59,7 +59,8 @@ class Solver(six.with_metaclass(abc.ABCMeta, object)):
             time_limit=None,
             keepfiles=False,
             tee=False,
-            load_solutions=True
+            load_solutions=True,
+            quiet=True
             )
 
     """

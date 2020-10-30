@@ -69,6 +69,7 @@ class PyomoSubmodelSolverBase_LBP(PyomoSubmodelSolverBase):
             lbp_results = opt.solve(lbp, options=options, 
                                         tee=self.config.tee,
                                         time_limit=self.config.time_limit,
+                                        quiet=self.config.quiet,
                                         load_solutions=True)
 
             #print(lbp_results)
