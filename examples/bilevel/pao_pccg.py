@@ -25,10 +25,12 @@ M.L.c3 = pe.Constraint(expr=  2*M.xZ -    M.L.xZ <=  15)
 M.L.c4 = pe.Constraint(expr= -2*M.xZ - 10*M.L.xZ <= -15)
 
 
+print("Solver Output")
+print("-"*80)
 opt = SolverFactory('pao.submodel.PCCG')
-res = opt.solve(M, quiet=False)
+res = opt.solve(M, quiet=False, bigm=1e2)
 
-
+print("")
 print("Variable Values")
 print("-"*80)
 print("M.xZ\t", M.xZ.value, "== 2")
