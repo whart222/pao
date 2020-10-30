@@ -31,4 +31,9 @@ class PyomoSubmodelSolver_PCCG(PyomoSubmodelSolverBase_LBP):
 
     def __init__(self, **kwds):
         super().__init__('pao.submodel.PCCG', 'pao.lbp.PCCG', False)
+        self.config.epsilon = 1e-4    #For use in disjunction approximation
+        self.config.xi = 0                #tolerance for UB-LB to claim convergence
+        self.config.maxit = 5           #Maximum number of iterations
+        self.config.bigm = 1e6             #upper bound on variables
+
 
